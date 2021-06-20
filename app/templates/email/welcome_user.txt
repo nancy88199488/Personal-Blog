@@ -1,0 +1,3 @@
+Hey {{user.username}}
+Welcome to My Blog
+We have just seen you have signed up for our application and want to welcome you to the family. Please enjoy viewing the Quotes. You can post yours, comment on quotes and delete.
