@@ -1,0 +1,27 @@
+18 of 67
+subscribe
+Inbox
+
+Gabriel Ayuel <ayuelgarang105@gmail.com>
+Sat, 19 Jun, 23:22 (2 days ago)
+to me, mutiefestus84
+
+{% extends 'base.html'%}
+{% import 'bootstrap/wtf.html' as wtf%}
+
+{% block content %}
+<div class="container" style="font-size: 20px; font-family: 'Viaoda Libre', cursive;  padding-top: 40px;">
+    <div class="row">
+        <div class="col-md-2"> </div>
+        <div class="col-md-8 mt-3 p-5 card">
+            <h3 class="mt-3 pb-3 text-center">Welcome to My Blog</h3>
+            <hr>
+            {{wtf.quick_form(subscriber_form)}}
+
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+</div>
+
+{% endblock%}
