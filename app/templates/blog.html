@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div style="font-size: 20px; font-family: 'Viaoda Libre', cursive;  padding-top: 40px;">
+    <div class="jumbotron hjumbo">
+        <div class="overlay">
+            <h1 class="text-center text-bold" style="color:70e000;">BROWSE THROUGH YOUR FAVORITE BLOGS</h1>
+        </div>
+    </div>
+    <!-- Card -->
+
+    {% for blog in blogs %}
+    <div class="container">
+        <div class="card mt-5">
+            <!-- Button -->
+            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"></a>
+
+            <!-- Card content -->
+            <div class="card-body">
+
+                <!-- Title -->
+                <h4 class="card-title">{{ blog.title_blog }}</h4>
+                <hr>
+                <!-- Text -->
+                <p class="card-text">{{ blog.description }}</p>
+
+            </div>
+
+            <!-- Card footer -->
+            <div class="rounded-bottom mdb-color dark secondary-color text-center pt-3">
+                <ul class="list-unstyled list-inline font-small">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <li class="list-inline-item pr-2 white-text"><i
+                                    class="far fa-clock pr-1"></i>{{ blog.posted }}
+                            </li>
+                        </div>
+                        <div class="col-md-4">
+                            <li class="list-inline-item pr-2"><a href="{{url_for('main.newComment', id=blog.id)}}"
+                                    class="white-text"><i class="far fa-comments pr-1"></i></a>
+                        </div>
+                        <div class="col-md-4">
+                            <li class="list-inline-item pr-2"><a href="{{url_for('main.deleteBlog', id=blog.id) }}"
+                                    class="white-text"><i class="fa fa-trash text-danger pr-1"></i></a>
+
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
