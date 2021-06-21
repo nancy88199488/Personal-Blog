@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-{%block navbar %}
+{% block navbar %}
 {% include 'navbar.html' %}
 {% endblock %}
 {% block content %}
@@ -7,8 +7,8 @@
 <div class="container-fluid" style="font-size: 20px; font-family: 'Viaoda Libre', cursive;  padding-top: 40px;">
     <div class="jumbotron hjumbo">
         <div class="overlay">
-            <h1 class="text-center text-italic" style="color: #139987;"> HEY!WELCOME TO MY BLOG</h1>
-            <p>Here you are free to explore,just enjoy the experience and express your interest and share ideas to inspire the world.</p>
+            <h1 class="text-center text-italic" style="color: #499913;"> HEY!WELCOME TO MY BLOG</h1>
+            <p class="text-center text-italic" style="color: #139913;">Here you are free to explore,just enjoy the experience and express your interest and share ideas to inspire the world.</p>
         </div>
     </div>
     <div>
@@ -16,20 +16,20 @@
             <div class="text-white text-center unique-color py-5 px-4">
                 <div class="py-5">
 
-                    <h5 class="h5 purple-text"><i class="fas fa-comment fa-fw"></i>A blog is an online journal in which you share your thoughts about a particular subject with readers and subscribers.</h5>
+                    <h5 class="h5 grey-text">A blog is an online journal in which you share your thoughts about a particular subject with readers and subscribers.</h5>
                     <h2 class="card-title h2 my-4 py-2">{{quote.author}}</h2>
                     <p class="mb-4 pb-2 px-md-5 mx-md-5">{{quote.quote}}</p>
-                    <a class="btn purple-gradient" aria-haspopup="true" aria-expanded="false"
-                        href="{{url_for('main.allBlogs')}}"><i class="fa fa-eye"></i> View Blogs</a>
+                    <a class="btn grey-gradient" aria-haspopup="true" aria-expanded="false"
+                        href="{{url_for('main.allBlogs')}}">View Blogs</a>
 
                 </div>
             </div>
         </div>
     </div>
-    <footer class="page-footer font-small dark secondary-color">
+    <footer class="page-footer font-small dark info-color">
 
-        <div class="footer-copyright text-center py-3">© 2021 Copyright| Created by Nancy Kemunto
-            <a href="#"> MyBlog</a>
+        <div class="footer-copyright text-center py-3">Copyright 2021|Created by Nancy Kemunto
+    
         </div>
 
     </footer>
