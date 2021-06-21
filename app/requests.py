@@ -1,6 +1,7 @@
 import urllib.request,json
 from .models import Quote
 
+
 base_url = None
 def configure_request(app):
     global base_url
@@ -17,6 +18,5 @@ def getQuotes():
         quoteObject = Quote(id,author,quote)
         read.append(quoteObject)
         return read
-
 
 
