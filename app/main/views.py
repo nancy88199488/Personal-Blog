@@ -16,7 +16,7 @@ def index():
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
     blogs = Blog.query.filter_by(user_id = user.id).all()
-    if user is None:
+    if user == None:
         abort(404)
 
     return render_template('profile/profile.html',user = user,blogs=blogs)  
@@ -25,7 +25,7 @@ def profile(uname):
 @login_required
 def update_profile(uname):
     user = User.query.filter_by(username = uname).first()
-    if user is None:
+    if user == None:
         abort(404)
 
     form = updateProfile()

@@ -1,7 +1,7 @@
+from app.main.views import newBlog
 import unittest
 from app.models import Blog,User
 from app import db
-
 
 class BlogTest(unittest.TestCase):
     def setUp(self):
@@ -23,5 +23,5 @@ class BlogTest(unittest.TestCase):
 
     def test_get_blog(self):
         self.new_blog.save()
-        got_blog = Blog.getallBlogs(1)
-        self.assertTrue(getallBlogs is not None)
+        get_blog = Blog.getallBlogs(1)
+        self.assertTrue(newBlog is not None)
