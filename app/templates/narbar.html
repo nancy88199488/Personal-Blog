@@ -28,18 +28,18 @@
         <ul class="navbar-nav ml-auto">
 
             <li>
-              <a class="nav-link text-white pr-4" aria-haspopup="true" aria-expanded="false" href="{{url_for('main.profile',uname=current_user.username)}}">🙎‍♂️Profile</a>
+              <a class="nav-link text-white pr-4" aria-haspopup="true" aria-expanded="false" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
             </li>
 
             <li>
-                <a class="nav-link text-white pr-4" aria-haspopup="true" aria-expanded="false" href="{{url_for('main.subscriber',uname=current_user.username)}}">🙎‍♂️Subscribe</a>
+                <a class="nav-link text-white pr-4" aria-haspopup="true" aria-expanded="false" href="{{url_for('main.subscriber',uname=current_user.username)}}">Subscribe</a>
             </li>
       
             <li>
               <a class="nav-link text-white pr-4" aria-haspopup="true" aria-expanded="false" href = "{{url_for('main.allBlogs')}}">AllBlogs</a>
             </li>
             <li>
-              <a class="nav-link text-white pr-5" aria-haspopup="true" aria-expanded="false" href = "{{url_for('main.newBlog')}}">Newblog</a>
+              <a class="nav-link text-white pr-5" aria-haspopup="true" aria-expanded="false" href = "{{url_for('main.newBlog')}}">NewBlog</a>
             </li>
         </ul>
   
@@ -49,9 +49,9 @@
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" href = "/">{{current_user.username}}</a>
           <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="{{url_for('auth.logout')}}">🙎‍♂️Logout</a>
+            <a class="dropdown-item" href="{{url_for('auth.logout')}}">Logout</a>
             {% else %}
-            <a class="dropdown-item text-white" href="{{url_for('auth.login')}}">🙎‍♂️Login</a>
+            <a class="dropdown-item text-white" href="{{url_for('auth.login')}}">Login</a>
             {%endif%}
           </div>
         </li>
