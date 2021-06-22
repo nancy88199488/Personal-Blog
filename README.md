@@ -16,7 +16,7 @@ You need to have git installed You can install it with the following command in 
 
 To access this project on your local files, you can clone it using these steps
 * Open your terminal
-* Use this command to clone  `$ git clone  https://github.com/nancy88199488/Pitch.git
+* Use this command to clone  `$ git clone  https://github.com/nancy88199488/Personal-Blog.git/
 * This will clone the repositoty into your local folder
 
 ##  Technologies Used
@@ -26,7 +26,7 @@ To access this project on your local files, you can clone it using these steps
 
 ## Live Site
 
-[View live]()
+[View live](https://thawing-river-15291.herokuapp.com/)
 
 ##  Contacts
 
