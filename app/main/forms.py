@@ -6,7 +6,7 @@ from wtforms import ValidationError
 
     
 class updateProfile(FlaskForm):
-    bio = TextAreaField('Tell us about you.',validators = [Required()])
+    bio = TextAreaField('Tell us  more about you.',validators = [Required()])
     submit = SubmitField('Submit')
 
 

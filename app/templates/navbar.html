@@ -1,9 +1,9 @@
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-info-color">
+<nav class="navbar navbar-expand-lg navbar-dark info-color">
 
   <!-- Navbar brand -->
   <a class="navbar-brand" href="/">My Blog
-    <span class="sr-only">(current)</span>
+      <span class="sr-only" style= color:black;>(current)</span>
   </a>
 
   <!-- Collapse button -->
@@ -14,46 +14,38 @@
 
   <div class="collapse navbar-collapse" id="basicExampleNav">
 
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link text-blue" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-blue" href="{{ url_for('main.about') }}">About</a>
-      </li>
-    </ul>
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link text-dark" href="/">Home <span
+                      class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link text-dark" href="{{ url_for('main.about') }}">About</a>
+          </li>
+      </ul>
 
-    <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto">
 
-      <li>
-        <a class="nav-link text-blue pr-4" aria-haspopup="true" aria-expanded="false"
-          href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
-      </li>
-
-      <li>
-        <a class="nav-link text-blue pr-4" aria-haspopup="true" aria-expanded="false"
-          href="{{url_for('main.subscriber',uname=current_user.username)}}">Subscribe</a>
-      </li>
-
-      <li>
-        <a class="nav-link text-blue pr-4" aria-haspopup="true" aria-expanded="false"
-          href="{{url_for('main.allBlogs')}}">AllBlogs</a>
-      </li>
-      <li>
-        <a class="nav-link text-blue pr-5" aria-haspopup="true" aria-expanded="false"
-          href="{{url_for('main.newBlog')}}">NewBlog</a>
-      </li>
-    </ul>
+          <li>
+            <a class="nav-link text-dark pr-4" aria-haspopup="true" aria-expanded="false" href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
+          </li>
+          <li>
+            <a class="nav-link text-dark pr-4" aria-haspopup="true" aria-expanded="false" href = "{{url_for('main.allBlogs')}}">AllBlogs</a>
+          </li>
+          <li>
+            <a class="nav-link text-dark pr-5" aria-haspopup="true" aria-expanded="false" href = "{{url_for('main.new_blog')}}">Newblog</a>
+          </li>
+      </ul>
 
     <ul class="navbar-nav ml-auto">
       {% if current_user.is_authenticated %}
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false" href="/">{{current_user.username}}</a>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" href = "/">{{current_user.username}}</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="{{url_for('auth.logout')}}">Logout</a>
           {% else %}
-          <a class="dropdown-item text-blue" href="{{url_for('auth.login')}}">Login</a>
+          <a class="dropdown-item text-dark" href="{{url_for('auth.login')}}">Login</a>
           {%endif%}
         </div>
       </li>

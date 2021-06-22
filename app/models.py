@@ -55,7 +55,7 @@ class Blog(db.Model):
     posted = db.Column(db.DateTime, default=datetime.utcnow)
     title_blog = db.Column(db.String(255), index=True)
     description = db.Column(db.Text, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id',ondelete='CASCADE'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     def saveBlog(self):
         db.session.add(self)
         db.session.commit()
@@ -80,8 +80,8 @@ class Comment(db.Model):
     __tablename__ = 'comments'
     id = db.Column(db.Integer, primary_key=True)
     comment = db.Column(db.String(255))
-    blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id',ondelete='CASCADE'))
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id',ondelete='CASCADE'))
+    blog_id = db.Column(db.Integer, db.ForeignKey('blogs.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     posted = db.Column(db.DateTime, default=datetime.utcnow)
     def saveComment(self):
         db.session.add(self)

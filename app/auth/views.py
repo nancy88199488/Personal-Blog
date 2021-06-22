@@ -16,7 +16,6 @@ def login():
             login_user(user,login_form.remember.data)
             return redirect (url_for('main.index'))
         flash('Invalid username or Password')
-            
         title = " Quotes login"
     return render_template('auth/login.html',login_form = login_form)   
 
@@ -27,17 +26,17 @@ def register():
         user = User(email = form.email.data,username = form.username.data,password = form.password.data)
         db.session.add(user)
         db.session.commit()
-        try:
-            mail_message("Welcome to Quotes","email/welcome_user",user.email,user=user)
-        except:
-            return redirect(url_for('auth.login'))
-
+        
+        mail_message("Welcome to Quotes","email/welcome_user",user.email,user=user)
+    
+        return redirect(url_for('auth.login'))
         title = 'New Account'
 
-    return render_template('auth/register.html',registration_form = form)   
+    return render_template('auth/register.html',register_form = form)   
 
 @auth.route('/logout')
 @login_required
 def logout():
     logout_user()
+    flash('You have successfully logged out')
     return redirect(url_for("main.index"))

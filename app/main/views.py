@@ -15,17 +15,16 @@ def index():
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
-    blogs = Blog.query.filter_by(user_id = user.id).all()
-    if user == None:
+    if user is None:
         abort(404)
 
-    return render_template('profile/profile.html',user = user,blogs=blogs)  
+    return render_template('profile/profile.html',user = user)  
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
 def update_profile(uname):
     user = User.query.filter_by(username = uname).first()
-    if user == None:
+    if user is  None:
         abort(404)
 
     form = updateProfile()
@@ -53,7 +52,7 @@ def update_pic(uname):
 
 @main.route('/blog/newBlog',methods = ['GET','POST'])
 @login_required
-def newBlog():
+def new_blog():
     subscribers = Subscriber.query.all()
     blogForm = BlogForm()
     if blogForm.validate_on_submit():
@@ -67,18 +66,18 @@ def newBlog():
         flash('New Blog Posted')
         return redirect(url_for('main.allBlogs'))
     title = 'New Blog'
-    return render_template('newBlog.html', title=title, blog_form=blogForm)
+    return render_template('new_blog.html', title=title, blog_form=blogForm)
 
 
 @main.route('/blog/allblogs', methods=['GET', 'POST'])
 @login_required
 def allBlogs():
     blogs = Blog.getallBlogs()
-    return render_template('blogs.html', blogs=blogs)
+    return render_template('blog.html', blogs=blogs)
 
 @main.route('/comment/new/<int:id>', methods=['GET', 'POST'])
 @login_required
-def newComment(id):
+def new_comment(id):
     blog = Blog.query.filter_by(id = id).all()
     blogComments = Comment.query.filter_by(blog_id=id).all()
     comment_form = CommentForm()
@@ -86,7 +85,7 @@ def newComment(id):
         comment = comment_form.comment.data
         new_comment = Comment(blog_id=id, comment=comment, user=current_user)
         new_comment.saveComment()
-    return render_template('newComment.html', blog=blog, blog_comments=blogComments, comment_form=comment_form)
+    return render_template('new_comment.html', blog=blog, blog_comments=blogComments, comment_form=comment_form)
 
 @main.route('/delete/<int:id>', methods=['GET', 'POST'])
 @login_required

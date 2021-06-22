@@ -1,0 +1,17 @@
+body {
+    font-family: 'Viaoda Libre', cursive;
+    background-image:url(/app/static/images/background.jpg);
+    
+}
+.footer {
+    color:black;
+    padding-top:15px
+}
+
+.navbar{
+    color:black;
+}
+.container-fluid{
+    padding: top 15px;
+}
+

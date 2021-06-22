@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div style="font-size: 20px; font-family: 'Viaoda Libre', cursive;  padding-top: 40px;">
-    <div class="jumbotron hjumbo">
         <div class="overlay">
-            <h1 class="text-center text-bold" style="color:70e000;">BROWSE THROUGH YOUR FAVORITE BLOGS</h1>
+            <h1 class="text-center text-italic" style="color:black;">BROWSE THROUGH YOUR BLOGS</h1>
         </div>
-    </div>
     <!-- Card -->
 
     {% for blog in blogs %}
@@ -30,17 +28,15 @@
                 <ul class="list-unstyled list-inline font-small">
                     <div class="row">
                         <div class="col-md-4">
-                            <li class="list-inline-item pr-2 white-text"><i class="far fa-clock pr-1"></i>{{ blog.posted
+                            <li class="list-inline-item pr-2 white-text">{{ blog.posted
                                 }}
                             </li>
                         </div>
                         <div class="col-md-4">
-                            <li class="list-inline-item pr-2"><a href="{{url_for('main.newComment', id=blog.id)}}"
-                                    class="white-text"><i class="far fa-comments pr-1"></i></a>
+                            <li class="list-inline-item pr-2"><a href="{{url_for('main.newComment', id=blog.id)}}"></a>
                         </div>
                         <div class="col-md-4">
-                            <li class="list-inline-item pr-2"><a href="{{url_for('main.deleteBlog', id=blog.id) }}"
-                                    class="white-text"><i class="fa fa-trash text-danger pr-1"></i></a>
+                            <li class="list-inline-item pr-2"><a href="{{url_for('main.deleteBlog', id=blog.id) }}"></a>
 
                         </div>
                     </div>
